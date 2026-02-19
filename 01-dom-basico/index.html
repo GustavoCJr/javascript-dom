@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <script defer src="assets/scripts/taskflow.js"></script>
+    <script defer src="assets/scripts/app.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>TaskFlow</h1>
+
+      <form id="form-tarefa" class="card">
+        <p id="erro" class="erro" aria-live="polite"></p>
+        <div class="row">
+          <label>
+            Título
+            <input id="titulo" placeholder="Ex: Estudar DOM" required />
+          </label>
+
+          <label>
+            Prioridade
+            <select id="prioridade">
+              <option value="baixa">Baixa</option>
+              <option value="media" selected>Média</option>
+              <option value="alta">Alta</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Descrição
+          <input id="descricao" placeholder="Ex: render, eventos, seletores" />
+        </label>
+
+        <label>
+          Tags (separe por vírgula)
+          <input id="tags" placeholder="js, dom, estudos" />
+        </label>
+
+        <button type="submit">Adicionar</button>
+
+        <p id="erro" class="erro" aria-live="polite"></p>
+      </form>
+
+      <section class="card">
+        <div id="filtros" class="filtros">
+          <button type="button" data-filtro="todas" class="ativo">Todas</button>
+          <button type="button" data-filtro="pendentes">Pendentes</button>
+          <button type="button" data-filtro="concluidas">Concluídas</button>
+        </div>
+        <div id="stats" class="stats"></div>
+        <ul id="lista-tarefas" class="lista"></ul>
+      </section>
+    </main>
+  </body>
+</html>
